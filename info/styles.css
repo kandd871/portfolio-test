@@ -1,0 +1,362 @@
+@font-face {
+    font-family: "Times Dot Roman";
+    src: 
+      local("Times Dot Roman"), 
+      url("../TimesDot/TimesDotRom.otf") format("opentype");
+    font-style: normal;
+    font-weight: normal;
+  }
+  
+  /* Italic Style */
+  @font-face {
+    font-family: "Times Dot Roman";
+    src: 
+      local("Times Dot Italic"), 
+      url("../TimesDot/TimesDot-Italic.otf") format("opentype");
+    font-style: italic;
+    font-weight: normal;
+  }
+  
+:root {
+    --color: rgb(255, 0, 255);
+    --background: #ededed;
+    --black: #5a5a5a;
+  }
+
+  /* width */
+::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(255, 255, 255); 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 0, 255, 0.8); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+
+  }
+
+body{
+    font-family: "Times Dot Roman", 'Times New Roman', Times, serif;
+    margin: 1vw;
+    box-sizing: border-box;
+    text-shadow: 0px 0px 8px rgba(237, 38, 255, 0.1);
+    background-color: var(--background);
+
+}
+.header {
+    position: fixed; /* Keep the header fixed */
+    top: 0vw; /* Distance from the top of the page */
+    left: 50%; /* Start positioning from the center */
+    transform: translateX(-50%); /* Shift the header back to center */
+    width: 100vw; /* Set the width of the header */
+    margin: 0 auto; /* Center alignment */
+    display: flex; 
+    justify-content: space-between; /* Space between items */
+    color: var(--color);
+    font-size: 1.5vw;
+    text-align: left; /* Ensure text within the header remains left-aligned */
+    z-index: 100; /* Ensure header is above other content */
+    background: linear-gradient(180deg, rgba(237,237,237,.95) 0%, rgba(237,237,237,.5) 30%, rgba(255, 255, 255, 0) 70%);
+
+}
+
+.details {
+    transition: .8s; /* Smooth transition for opacity and blur */
+}
+
+.blur-and-hide {
+    filter: blur(6px); /* Apply blur effect */
+    opacity: 0; /* Hide the element */
+}
+
+
+.bio, .info, .archive {
+    text-align: left; /* Specifically ensure each item is left-aligned */
+    padding: 2vw;
+    padding-bottom: 0vw;;
+}
+
+
+/* .name,.info,.archive{
+    position: fixed;
+} */
+
+.bio{
+    width: 65%;
+    /* border: 1px dotted var(--color); */
+    border-radius: 50%;
+    /* padding: 2vw 2vw 2vw 2vw; */
+}
+  
+a{
+    color: var(--color);
+    text-decoration: none;
+    transition: .2s;
+}
+
+a:hover{
+    /* font-family: 'Times Dot Roman Italic', Times, serif; */
+    filter: blur(4px);
+    color: var(--color);
+
+}
+
+.info > a{
+    font-family: 'Times Dot Roman', Times, serif;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+
+.grid-container {
+    display: flex;
+    gap: 0vw; /* Space between columns */
+    width: 98vw;
+    margin-top: 11.5vw;
+    margin-bottom: 8vw;
+    height: 0;
+    animation: stack 1s forwards ease-in-out;
+}
+
+.grid-column {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 0vw; /* Space between items in each column */
+    flex: 1; /* Ensure all columns have equal width */
+}
+
+.grid-item {
+    display: flex;
+    justify-content: center; 
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    margin: 0vw;
+    margin-bottom: .9vw;
+    margin-left: 0;
+    margin-right: 0;
+    transition: .7s;
+}
+
+.thumbnail {
+    margin: 0;
+    padding: 0;
+    border: 1px dotted var(--color);
+    border-radius: .3vw;
+    display: flex; /* Add flex display */
+    align-items: flex-start; /* Align items at the start */
+}
+
+.thumbnail img {
+    width: 31.75vw; /* Scale images to fit the grid item */
+    height: auto; 
+    padding: 0;
+    margin: 0; /* Remove any margin */
+    border-radius: .3vw;
+    display: block; /* Prevent gaps below images */
+}
+
+.border{
+    border-radius: .3vw;;
+    border: 1px dotted var(--color); 
+    box-sizing: border-box;
+}
+
+  #editorial img{
+    object-fit: cover;
+    height: 31.75vw;
+    width: 31.75vw;
+  }
+
+.two {
+    display: flex; /* Layout the images in a row */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%; /* Full width of the grid item */
+    align-items: flex-start; /* Align items to the top */
+}
+
+.two img {
+    width: 50%; /* Each image takes half the width of the .two div */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+    border: none; /* Ensure no borders add space */
+}
+
+#cover1, #cover4 {
+    transform: rotate(180deg); /* Rotate specific images */
+}
+
+.skill-text{
+    transition: .25s;
+    /* font-family: 'Times Dot Roman Italic', Times, serif;; */
+    }
+
+    .blur {
+        filter: blur(4px);
+      }
+      
+.copyright{
+    color: var(--color);
+    margin: .6vw;
+    margin-bottom: 3vw;
+    text-align: center;
+    font-size: 1.15vw;
+    animation: stack2 3s forwards ease-in;
+}
+
+.footer{
+    width: 100vw;
+    height: 5vw;
+    display: block;
+    position: fixed;
+    background: rgb(78, 78, 78);
+    background: linear-gradient(180deg, rgba(200,200,200,0) 0%, rgba(237, 237, 237, .8) 95%, rgba(237,237,237,1) 100%);
+    bottom:0;
+    left: 0;
+    transition: .25s;
+    }
+
+    .hover {
+        color: var(--color);
+        font-size: 1.3vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(204, 203, 203, 0.4);
+        width: 97%;
+        height: 100%;
+        opacity: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.3vw;
+        transition: opacity 0.5s;
+        cursor: alias;
+    }
+    
+    .circle {
+        background-color: var(--color);
+        color: var(--background);
+        border-radius: 50vw;
+        padding: 0.5vw;
+        width: 1.8vw; /* Start with zero width */
+        height: 1.8vw;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        align-content: center;
+        justify-content: center;
+        overflow: hidden; /* Prevents text from showing until width expands */
+        white-space: nowrap; /* Keeps text in a single line */
+        transition: width 0.25s ease-in-out; /* Smooth transition for width */
+        transition-delay: .35s;
+        border: 8px solid var(--color);
+        -webkit-box-shadow: 0px 0px 18px 0px rgba(255,0,255,0.1);
+        -moz-box-shadow: 0px 0px 18px 0px rgba(255,0,255,0.1);
+        box-shadow: 0px 0px 18px 0px rgba(255,0,255,0.1);
+    }
+    
+    .text {
+        opacity: 0; /* Text starts hidden */
+        transition: opacity 0.25s ease-in-out; /* Smooth fade-in for the text */
+        transition-delay: .35s; /* Delay the text appearance */
+        line-height: 1.1;
+    }
+
+    .thumbnail:hover{}
+    
+    .thumbnail:hover .hover {
+        opacity: 1; /* Fade in the hover element */
+    }
+
+    .thumbnail:hover .image {
+        filter: blur(2px); /* Apply blur to the image on hover */
+    }
+
+    .thumbnail:hover .text {
+        opacity: 1; /* Reveal text inside the circle */
+    }
+
+   /* Reset styles when not hovering */
+    .thumbnail:not(:hover) .circle {
+        width: 1.8vw; /* Collapse the circle */
+        transition: width 0.25s ease-in-out; /* Ensure smooth collapsing */
+    }
+
+    .thumbnail:not(:hover) .text {
+        opacity: 0; /* Hide text */
+        transition: opacity 0.25s ease-in-out; /* Smooth transition for collapsing */
+        transition-delay: 0s; /* Reset delay */
+    }
+
+    .thumbnail:not(:hover) .hover{
+        transition-delay: .25s;
+    }
+
+    .skill{
+        font-size: .9vw;
+        opacity: .8;
+        font-family: 'Times Dot Roman', Times, serif;
+        font-style: italic;
+        text-transform: capitalize;
+    }
+
+    .projpoints {
+        width:  .65vw;
+        height: .65vw;
+        background-color: var(--color);
+        transition: .3s;
+        border-radius: 50%;
+        filter: blur(2px);
+        pointer-events: none;
+        animation: opacityblur forwards .75s ease-in;
+        }
+        
+
+    @keyframes stack{
+        from {
+            height: 0;
+            opacity: 0;
+            filter: blur(5px);
+        } to{
+            height: 150vh;
+            opacity: 1;
+            filter: blur(0px);
+        }
+    }
+
+
+    @keyframes stack2{
+        from {
+            opacity: 0;
+        } to{
+            opacity: 1;
+        }
+    }
+
+    @keyframes opacityblur {
+        from {
+          filter: blur(4px);
+          opacity: 0;
+        }
+        to {
+          filter: default;
+          opacity: 1;
+        }
+        }
+        
